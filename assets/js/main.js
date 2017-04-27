@@ -11,15 +11,23 @@ var inputCheckbox = document.getElementsByTagName("input")[8];
 var button = document.getElementsByTagName("input")[9];
 
 
-var expressionOnlyLetters          = /^[A-Za-z]+$/;
+var expressionOnlyLetters          = /[A-Z]+[A-Z]/;
+var expressionOnlyLetters2      = /^[A-Za-z]+$/;
+
 var expressionFirstLetterUppercase = /^[A-Z]/;
 var expressionEmail                = /\w+@+\w+\.+[a-z]/;
 var expressionPassword6Characters  =/^[A-Za-z0-9_]$/;
 
- function nameLastnameValidation(){
-  if  (!expressionOnlyLetters.test(inputName.value)){
-     alert("no");
-   }
- }
+function nameLastnameValidation(){
+ if  (!expressionOnlyLetters.test(inputName.value)){
+    alert("no cumple");
+  }
+}
 
- nameLastnameValidation();
+ window.addEventListener("load", function(){
+   button.addEventListener("click", function(event){
+     event.preventDefault();
+nameLastnameValidation()
+
+   })
+ });
