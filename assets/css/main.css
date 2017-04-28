@@ -1,0 +1,8 @@
+
+.input-span{
+  display: none;
+}
+
+input [type="number"]{
+  appearance: none;
+}
